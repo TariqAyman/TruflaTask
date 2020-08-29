@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Clients\ThemoviedbClient;
+use App\Clients\ThemoviedbClientInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind(ThemoviedbClientInterface::class, ThemoviedbClient::class);
     }
 
     /**
