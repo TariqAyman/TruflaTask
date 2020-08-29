@@ -29,5 +29,12 @@
         <server name="MAIL_DRIVER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
+        <server name="DB_CONNECTION" value="sqlite"/>
+        <server name="DB_DATABASE" value=":memory:"/>
+        <server name="INTERVAL_HOURS" value="1"/>
+        <server name="Themoviedb_Key" value="53345c0b896cbe9c07e717dd647b7b37"/>
+        <server name="Themoviedb_URL_API" value="https://api.themoviedb.org/3/"/>
+        <server name="num_of_pages" value="1"/>
+
     </php>
 </phpunit>
