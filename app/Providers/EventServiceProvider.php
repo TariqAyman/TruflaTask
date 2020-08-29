@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
+use App\Events\FetchCategoriesEvent;
+use App\Events\FetchLatestMovieEvent;
+use App\Events\FetchTopMoviesEvent;
+use App\Listeners\FetchCategoriesListener;
+use App\Listeners\FetchLatestMovieListener;
+use App\Listeners\FetchTopMoviesListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,6 +22,15 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        FetchCategoriesEvent::class => [
+            FetchCategoriesListener::class,
+        ],
+        FetchLatestMovieEvent::class => [
+            FetchLatestMovieListener::class,
+        ],
+        FetchTopMoviesEvent::class => [
+            FetchTopMoviesListener::class,
         ],
     ];
 
